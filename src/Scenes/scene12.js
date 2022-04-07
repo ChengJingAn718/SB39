@@ -3,7 +3,7 @@ import BaseProp from '../components/BaseProp';
 import BaseImage from '../components/BaseImage';
 import loadSound from '../utils/loadSound';
 import "../stylesheets/styles.css";
-import { pauseEnvirAni, prePathUrl, returnAudioPath, setRepeatAudio, startRepeatAudio, stopRepeatAudio } from '../components/CommonFunctions';
+import { pauseEnvirAni, playEnvirAni, prePathUrl, returnAudioPath, setRepeatAudio, startRepeatAudio, stopRepeatAudio } from '../components/CommonFunctions';
 import { UserContext } from "../components/BaseShot"
 
 let timerList = [];
@@ -124,7 +124,7 @@ export default function BaseScene({ nextFunc, _geo, setSuccessNum }) {
             timerList[1] = setTimeout(() => {
 
                 audioList.clapAudio.play();
-                pauseEnvirAni(aniNum, 200)
+                aniNum = playEnvirAni(correctList, 250)
 
                 refCorrect.current.setStyle([{
                     key: 'transition', value: '2.2s'

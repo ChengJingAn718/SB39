@@ -82,7 +82,7 @@ const App = ({ geo, _setBackground, __controlBacksound, _startTransition,
   baseGeo, _isBackloaded
 }, ref) => {
 
-  const [index, setIndex] = useState(9);
+  const [index, setIndex] = useState(0);
   const [successList, setsuccessList] = useState(0);
   const [_isBackSoundPlaying, _setBackgroundPlaying] = useState(true);
   const musicRef = useRef();
@@ -183,7 +183,7 @@ const App = ({ geo, _setBackground, __controlBacksound, _startTransition,
     <div >
       {<div className={_isBackloaded ? 'aniObject' : 'hideObject'}>
         <Switch test={index}>
-          <Scene1 nextFunc={() => { setFomart(7) }} _baseGeo={baseGeo} _geo={__geo} value={0} />
+          <Scene1 nextFunc={() => { setFomart(1) }} _baseGeo={baseGeo} _geo={__geo} value={0} />
           <Scene2 nextFunc={nextFunc} _baseGeo={baseGeo} startTransition={_startTransition} _geo={__geo} value={1} />
           <Scene3 nextFunc={nextFunc} _baseGeo={baseGeo} _geo={__geo} value={2} />
           <Scene4 nextFunc={nextFunc} _baseGeo={baseGeo} _geo={__geo} value={3} />

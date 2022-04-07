@@ -30,6 +30,13 @@ new loadAnimation('recent/SB39_Boy_pose.json').then(result => {
     animationList[4] = result;
 }, () => { });
 
+loadAnimation('main/feather01.json').then(result => {
+    animationList[5] = result;
+}, () => { });
+loadAnimation('main/feather02.json').then(result => {
+    animationList[6] = result;
+}, () => { });
+
 let timerList = []
 export default function Scene2({ nextFunc, _geo, _baseGeo, startTransition }) {
 
@@ -240,7 +247,23 @@ export default function Scene2({ nextFunc, _geo, _baseGeo, startTransition }) {
                     isClickToPauseDisabled={true}
                 />
             </div>
+            <div
+                className='upDownAniFeather'
+                style={{
+                    position: "fixed", width: _geo.width * 0.15 + "px",
+                    left: (_geo.width * 0.28 + _geo.left) + "px"
+                    , top: (_geo.top + _geo.height * 0.38) + "px",
 
+                    pointerEvents: 'none'
+                }}>
+                <Lottie options={returnOption(6)}
+                    style={{ transform: 'rotate(45deg)' }}
+                    mouseDown={false}
+                    autoplay loop
+                    isStopped={true}
+                    isClickToPauseDisabled={true}
+                />
+            </div>
 
         </div>
     );
