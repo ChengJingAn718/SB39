@@ -80,6 +80,9 @@ export default function Scene18({ nextFunc, _geo }) {
             audioList.bodyAudio1.volume = 1
             audioList.bodyAudio2.volume = 1
 
+            audioList.bodyAudio1.pause();
+            audioList.bodyAudio2.pause();
+
             for (let i = 0; i < timerList.length; i++)
                 clearTimeout(timerList[i])
         }
