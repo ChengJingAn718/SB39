@@ -31,6 +31,7 @@ import Welldone from "../Scenes/welldone";
 
 import "../stylesheets/styles.css";
 import { UserContext } from './BaseShot';
+import { MusicButton } from './CommonButtons';
 
 const Switch = props => {
   const { test, children } = props
@@ -127,6 +128,9 @@ const App = ({ geo, _setBackground, __controlBacksound, _startTransition,
       setTimeout(() => {
         musicRef.current.className = 'commonButton'
       }, 1500);
+      setTimeout(() => {
+        musicRef.current.startBGSound()
+      }, 500);
     }
 
     setIndex(judgeNum)
@@ -143,6 +147,8 @@ const App = ({ geo, _setBackground, __controlBacksound, _startTransition,
   React.useImperativeHandle(ref, () => ({
     nextFunc: () => {
       setFomart(1);
+
+
     },
     gameStop: (val) => {
       GameisStop = val
@@ -287,25 +293,8 @@ const App = ({ geo, _setBackground, __controlBacksound, _startTransition,
         </div>
       }
 
-
-      <div
-        ref={musicRef}
-        className='hideObject'
-        onClick={controlBacksound}
-        style={{
-          position: "fixed", width: __geo.width * 0.055 + "px",
-          height: __geo.width * 0.055 + "px",
-          left: 2 + "%",
-          top: "46%",
-          cursor: 'pointer',
-        }}>
-        <img
-
-          width={"100%"}
-          draggable={false}
-          src={"./images/Buttons/" + (!_isBackSoundPlaying ? "Audio_mute" : "Audio_unmute") + ".svg"}
-        />
-      </div>
+      <MusicButton ref={musicRef} _geo={__geo}
+        backAudio={_audioList.backAudio} className='hideObject' />
     </div >
   );
 }

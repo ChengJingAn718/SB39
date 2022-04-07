@@ -76,6 +76,14 @@ const MusicButton = React.forwardRef((prop, ref) => {
         }
     }
 
+    React.useImperativeHandle(ref, () => ({
+        startBGSound: (props) => {
+            if (_isBackSoundPlaying)
+                prop.backAudio.play();
+        }
+    }
+    ))
+
     return (
         <div
             ref={ref}

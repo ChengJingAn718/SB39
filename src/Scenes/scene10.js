@@ -177,15 +177,6 @@ export default function BaseScene({ nextFunc, _geo, setSuccessNum }) {
                 ref={refCorrect}
             >
 
-                <BaseImage
-                    url={"Icons/SB39_Interactive-Icon_SB39_Interactive_Icon_Green_Highlight.svg"}
-                    geo={_geo}
-                    scale={0.93}
-                    posInfo={{ l: 0.035, t: 0.065 }}
-                    ref={greenGlow}
-                    className='hideObject'
-                    style={{ transition: '0.7s' }}
-                />
 
                 {[0, 1, 2, 3].map((value, index) =>
                     < BaseImage
@@ -200,6 +191,16 @@ export default function BaseScene({ nextFunc, _geo, setSuccessNum }) {
                     />
                 )
                 }
+
+                <BaseImage
+                    url={"Icons/SB39_Interactive-Icon_SB39_Interactive_Icon_Green_Highlight.svg"}
+                    geo={_geo}
+                    scale={0.93}
+                    posInfo={{ l: 0.035, t: 0.055 }}
+                    ref={greenGlow}
+                    className='hideObject'
+                    style={{ transition: '0.7s' }}
+                />
             </BaseProp>
 
             <BaseProp
@@ -213,6 +214,14 @@ export default function BaseScene({ nextFunc, _geo, setSuccessNum }) {
                 ref={refInCorrect}
             >
 
+
+                < BaseImage
+                    scale={0.93}
+                    posInfo={{ l: 0.035, t: 0.068 }}
+                    url={"Icons/SB39_Interactive-Icon_SB39_Interactive_Icon_02.svg"}
+                    geo={_geo}
+                    onLoad={loading}
+                />
                 <BaseImage
                     url={"Icons/SB39_Interactive-Icon_SB39_Interactive_Icon_Red_Highlight.svg"}
                     geo={_geo}
@@ -221,13 +230,6 @@ export default function BaseScene({ nextFunc, _geo, setSuccessNum }) {
                     ref={redGlow}
                     className='hideObject'
                     style={{ transition: '0.7s' }}
-                />
-                < BaseImage
-                    scale={0.93}
-                    posInfo={{ l: 0.035, t: 0.068 }}
-                    url={"Icons/SB39_Interactive-Icon_SB39_Interactive_Icon_02.svg"}
-                    geo={_geo}
-                    onLoad={loading}
                 />
             </BaseProp>
 

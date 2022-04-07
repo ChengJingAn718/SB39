@@ -68,11 +68,6 @@ const Scene1 = React.forwardRef(({ nextFunc, _geo, _baseGeo }, ref) => {
             initialAudio(audioList)
 
         setTimeout(() => {
-            audioList.backAudio.play().catch(error => {
-            });
-        }, 500);
-
-        setTimeout(() => {
             if (!isGameplaying) {
                 isGameplaying = true
             }
